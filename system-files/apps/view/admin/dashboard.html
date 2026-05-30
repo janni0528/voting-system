@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../../public/css/admin.css">
+	<title>University Voting</title>
+</head>
+	<body>
+		<div class = "sidebar">
+			<div class = "container">
+				<div class = "sidebar-content">
+					<div class="title">
+						<h1>University </h1><h1 class="elec">Election</h1>
+					</div>
+					<div class = "body">
+						<ul>
+							<li>
+								<a href="../admin/dashboard.html" class = "active">
+									<img src = "../../../public/img/icons/i-dashboard.png" alt = "icon">	
+									<span>Dashboard</span>
+								</a>
+							</li>
+							<li>
+								<a href="../admin/view-vote.html" class = "inactive">
+									<img src = "../../../public/img/icons/i-view-vote.png" alt = "icon">	
+									<span>View Vote</span>
+								</a>
+							</li>
+							<li>
+								<a href="../admin/user-management.html" class = "inactive">
+									<img src = "../../../public/img/icons/i-user-management.png" alt = "icon">
+									<span>User Management</span>
+								</a>
+							</li>
+							<li>
+								<a href="../admin/tools.html" class = "inactive">
+									<img src = "../../../public/img/icons/i-tools.png" alt = "icon">
+									<span>Tools</span>
+								</a>
+							</li>
+						</ul>
+						<button id = "logout-btn">Logout</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class = "dashboard-sec">
+			<div class = "container">
+				<div class ="dash-container">
+					<div class = "title">
+						<h1>Dashboard</h1>
+						<div class="desc">
+							<p>Welcome back,</p><h3>Admin</h3>
+						</div>
+					</div>
+					<div class = "analytics">
+						<div class = "ana-card" id = "total-stud">
+							<h3>Total Registered Students</h3>
+							<h1>0</h1>
+						</div>
+						<div class = "ana-card" id = "total-cad">
+							<h3>Total Candidate</h3>
+							<h1>0</h1>
+						</div>
+						<div class = "ana-card" id = "vote-turnout">
+							<h3>Voter Turnout</h3>
+							<h1>0%</h1>
+						</div>
+						<div class = "ana-card" id = "vote-cast">
+							<h3>Vote Cast</h3>
+							<h1>0</h1>
+						</div>
+					</div>
+					<div class = "overview">
+						<h3>Candidate Overview</h3>
+						<div class="cand-graph">
+							<div class="graph"></div>
+							<div class="graph"></div>
+							<div class="graph"></div>
+							<div class="graph"></div>
+							<div class="graph"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../../public/css/admin.css">
+	<title>University Voting</title>
+</head>
+	<body>
+		<div class = "sidebar">
+			<div class = "container">
+				<div class = "sidebar-content">
+					<div class="title">
+						<h1>University </h1><h1 class="elec">Election</h1>
+					</div>
+					<div class = "body">
+						<ul>
+							<li>
+								<a href="../admin/dashboard.html" class = "inactive">
+									<img src = "/public/img/icons/i-dashboard.png" alt = "icon">
+									<span>Dashboard</span>
+								</a>
+							</li>
+							<li>
+								<a href="../admin/view-vote.html" class = "active">
+									<img src = "../../../public/img/icons/i-view-vote.png" alt = "icon">	
+									<span>View Vote</span>
+								</a>
+							</li>
+							<li>
+								<a href="../admin/user-management.html" class = "inactive">
+									<img src = "../../../public/img/icons/i-user-management.png" alt = "icon">
+									<span>User Management</span>
+								</a>
+							</li>
+							<li>
+								<a href="../admin/tools.html" class = "inactive">
+									<img src = "../../../public/img/icons/i-tools.png" alt = "icon">
+									<span>Tools</span>
+								</a>
+							</li>
+						</ul>
+						<button id = "logout-btn">Logout</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class = "view-vote-sec">
+			<div class = "container">
+				<div class ="vv-container">
+					<div class = "title">
+						<h1>View Vote</h1>
+					</div>
+					<div class = "analytics">
+						<div class = "ana-card" id = "total-stud">
+							<h3>Total Registered Students</h3>
+							<h1>0</h1>
+						</div>
+						<div class = "ana-card" id = "total-cad">
+							<h3>Total Candidate</h3>
+							<h1>0</h1>
+						</div>
+						<div class = "ana-card" id = "vote-turnout">
+							<h3>Voter Turnout</h3>
+							<h1>0%</h1>
+						</div>
+						<div class = "ana-card" id = "vote-cast">
+							<h3>Vote Cast</h3>
+							<h1>0</h1>
+						</div>
+					</div>
+					<div class = "overview">
+						<div class="title">
+							<h3>Candidate Overview by Department</h3>
+							<div class="custom-select">
+                                <select name="position" id="position-filter">
+                                    <option value="president">President</option>
+                                    <option value="vice-president">Vice President</option>
+                                    <option value="secretary">Secretary</option>
+                                    <option value="treasurer">Treasurer</option>
+                                    <option value="auditor">Auditor</option>
+                                </select>
+                                <span class="custom-arrow">
+                                </span>
+                            </div>
+						</div>	
+						<div class = "body">
+							<div class = "candidates">
+								<ul>
+									<li id = "active">Candidate no. 1</li>
+									<li id = "inactive">Candidate no. 2</li>
+								</ul>
+							</div>
+							<div class = "pie"></div>
+							<div class = "department">
+								<ul>
+									<li id = "coe">
+										<div class="color-tag" id="coe"></div>
+										<p>College of Engineering</p>
+									</li>
+									<li id = "ccst">
+										<div class="color-tag" id="ccst"></div>
+										<p>College of Computer Science and Technology</p>
+									</li>
+									<li id = "cas">
+										<div class="color-tag" id="cas"></div>
+										<p>College of Arts and Science</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

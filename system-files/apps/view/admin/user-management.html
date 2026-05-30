@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../../public/css/admin.css">
+	<title>University Voting</title>
+</head>
+	<body>
+		<div class = "sidebar">
+			<div class = "container">
+				<div class = "sidebar-content">
+					<div class="title">
+						<h1>University </h1><h1 class="elec">Election</h1>
+					</div>
+					<div class = "body">
+						<ul>
+							<li>
+								<a href="../admin/dashboard.html" class = "inactive">
+									<img src = "/public/img/icons/i-dashboard.png" alt = "icon">
+									<span>Dashboard</span>
+								</a>
+							</li>
+							<li>
+								<a href="../admin/view-vote.html" class = "inactive">
+									<img src = "../../../public/img/icons/i-view-vote.png" alt = "icon">	
+									<span>View Vote</span>
+								</a>
+							</li>
+							<li>
+								<a href="../admin/user-management.html" class = "active">
+									<img src = "../../../public/img/icons/i-user-management.png" alt = "icon">
+									<span>User Management</span>
+								</a>
+							</li>
+							<li>
+								<a href="../admin/tools.html" class = "inactive">
+									<img src = "../../../public/img/icons/i-tools.png" alt = "icon">
+									<span>Tools</span>
+								</a>
+							</li>
+						</ul>
+						<button id = "logout-btn">Logout</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class = "user-management-sec">
+			<div class = "container">
+				<div class ="um-container">
+					<div class = "title">
+						<h1>User Management</h1>
+					</div>
+					<div class = "analytics">
+						<div class = "ana-card" id = "total-stud">
+							<h3>Total Registered Students</h3>
+							<h1>0</h1>
+						</div>
+						<div class = "ana-card" id = "total-cad">
+							<h3>Total Candidate</h3>
+							<h1>0</h1>
+						</div>
+						<div class = "ana-card" id = "vote-turnout">
+							<h3>Voter Turnout</h3>
+							<h1>0%</h1>
+						</div>
+						<div class = "ana-card" id = "vote-cast">
+							<h3>Vote Cast</h3>
+							<h1>0</h1>
+						</div>
+					</div>
+					<div class = "body">
+						<div class="nav">
+                            <div class = "actions">
+                                <button id="archive-btn"><img src="../../../public/img/icons/i-archive.png" alt="act"></button>
+								<button id="disabled-btn"><img src="../../../public/img/icons/i-disabled.png" alt="act"></button>
+                            </div>
+                            <div class="custom-select">
+                                <select name="position" id="position-filter">
+                                    <option value="president">All Roles</option>
+                                    <option value="vice-president">Student</option>
+                                    <option value="secretary">Candidate</option>
+                                </select>
+                                <span class="custom-arrow">
+                                </span>
+                            </div>
+                            <form action = "" method="GET">
+                                <input type="text" id="search-user" name="s-user" placeholder="Search User...">
+                                <button> <img src="../../../public/img/icons/i-magnifying.png" alt="btn"></button>
+                            </form>
+                        </div>
+                        <div class="user-table">
+                            <div class="user-option">
+                                <button class="active" id = "users-opt-btn">Users</button>
+								<button class="inactive" id = "archive-opt-btn">Archive</button>
+                            </div>
+                            <div class="main-table">
+                                <table>
+                                    <tr>
+                                        <th class="cb"><input type="checkbox"></th>
+                                        <th>Student ID</th>
+                                        <th>Name</th>
+                                        <th>Department</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Registered</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="cb"><input type="checkbox"></td>
+                                        <td><p id="stud-id">23-12345</p></td>
+                                        <td><p id="name">Sample name</p></td>
+                                        <td><p id="dept">College of Arts and Science</p></td>
+                                        <td><p id="email">samplename@email.com</p></td>
+                                        <td><p id="role">Student</p></td>
+                                        <td><p id="registered">May 10, 20026</p></td>
+                                        <td><p id="status" class="pending">Pending</p></td>
+                                        <td><div class ="actions-btns">
+                                            <img id ="" src="../../../public/img/icons/i-archive2.png" alt="">
+                                            <a href="../admin/edit-user.html"><img id ="" src="../../../public/img/icons/i-edit.png" alt=""></a>
+                                            <img id ="" src="../../../public/img/icons/i-disabled2.png" alt=""></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
