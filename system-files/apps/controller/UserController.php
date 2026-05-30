@@ -166,6 +166,8 @@ class UserController {
     private function redirectWithError(string $message): never {
         if (session_status() === PHP_SESSION_NONE) session_start();
         $_SESSION['login_error'] = $message;
+
+        //test comment
         
         // Fix for PHP fallback error routing (relative to public/login.php)
         header('Location: ../apps/view/login-signup.php#login');
