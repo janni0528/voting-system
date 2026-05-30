@@ -168,6 +168,7 @@ class UserController {
         $_SESSION['login_error'] = $message;
 
         //test comment
+        //test comment2
         
         // Fix for PHP fallback error routing (relative to public/login.php)
         header('Location: ../apps/view/login-signup.php#login');
