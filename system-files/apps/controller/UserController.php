@@ -169,6 +169,7 @@ class UserController {
 
         //test comment
         //test comment2
+        //test comment3
         
         // Fix for PHP fallback error routing (relative to public/login.php)
         header('Location: ../apps/view/login-signup.php#login');
