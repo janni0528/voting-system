@@ -125,7 +125,7 @@ class UserController {
             // JS executes relative to: /apps/view/auth/login-signup.php
             $redirectMap = [
                 'student'   => '../view/student/browse.php',
-                'candidate' => '../view/candidate/dashboard.php',
+                'candidate' => '../view/candidate/candidate-dashboard.php',
                 'admin'     => '../view/admin/dashboard.php',
             ];
             $destination = $redirectMap[$user['roles']] ?? '../student/browse.php';
@@ -135,7 +135,7 @@ class UserController {
             // PHP executes relative to: /public/login.php
             $redirectMap = [
                 'student'   => '../apps/view/student/browse.php',
-                'candidate' => '../apps/view/candidate/dashboard.php',
+                'candidate' => '../apps/view/candidate/candidate-dashboard.php',
                 'admin'     => '../apps/view/admin/dashboard.php',
             ];
             $destination = $redirectMap[$user['roles']] ?? '../apps/view/student/browse.php';

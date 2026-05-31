@@ -153,9 +153,8 @@ header .container {
 .dashboard-sec {
     background-color: var(--secondary-bg);
 	background-image: url(img/pluses.png);
-	/* display: flex; */
-	display: none;
-	/* height: 100vh; */
+	 display: flex; 
+	 height: 100vh; 
 
     .dash-container {
         display: flex;

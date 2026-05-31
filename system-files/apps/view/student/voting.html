@@ -21,10 +21,10 @@
 		<section class = "vote-section">
 			<div class = "container">
 				<div class ="vote-container">
-					<div class = "vote-title">
-						<h1>Cast Your Vote</h1>
-						<div class = "line"></div>
-					</div>
+					<div class="vote-title">
+    				<h1>Cast Your Vote</h1>
+    				<div class="line"></div>
+				</div>
 					<div class = "choices-container">
 						<div class = "cho-title">
 							<h3>Position</h3>
@@ -195,7 +195,7 @@
 								</ul>
 							</div>
 							<div class="button">
-								<button>Confirm Vote</button>
+								<button onclick="confirmVote()">Confirm Vote</button>
 							</div>
 						</div>
 					</div>
@@ -284,38 +284,112 @@
 		</section>
 	</body>
 	<script>
-		const voteButtons = document.querySelectorAll('.vt-btn');
-		const viewProfile = document.querySelectorAll('.view-profile');
-		const viewModal = document.querySelector('.prof-modal');
-		const closeButton = document.querySelector('.x-btn');
+    const voteButtons = document.querySelectorAll('.vt-btn');
+    const viewProfile = document.querySelectorAll('.view-profile');
+    const viewModal = document.querySelector('.prof-modal');
+    const closeButton = document.querySelector('.x-btn');
+    const voteSection = document.querySelector('.vote-section');
+    const reviewSection = document.querySelector('.review-sec');
 
-		voteButtons.forEach(button => {
-		    button.addEventListener('click', function() {
-		        // Find the specific card this button belongs to
-		        const card = this.closest('.c-card');
-			
-		        // 1. Toggle the background color and text colors via CSS class
-		        card.classList.toggle('voted');
-			
-		        // 2. Change the button text depending on the state
-		        if (card.classList.contains('voted')) {
-		            this.textContent = 'Unvote';
-		        } else {
-		            this.textContent = 'Vote';
-		        }
-		    });
-		});
-		
-		viewProfile.forEach(button => {
-			button.addEventListener('click', () => {
-	
-				viewModal.style.display = 'flex';
-			});
-		});
+    // Track current step (1-6)
+    let currentStep = 1;
+    const totalSteps = 6;
 
-		closeButton.addEventListener('click', function() {
-		    viewModal.style.display = 'none';
-		});
-		
-	</script>
+    // Position labels per step
+    const positions = [
+        'Presidential Candidate',
+        'Vice-Presidential Candidate',
+        'Secretarial Candidate',
+        'Treasurer Candidate',
+        'Auditor Candidate',
+        'Review Vote'
+    ];
+
+    // --- Navigation Logic ---
+    function updateView() {
+        if (currentStep === 6) {
+            // Show review section, hide vote section
+            voteSection.style.display = 'none';
+            reviewSection.style.display = 'block';
+            updateProgressIndicators(reviewSection, currentStep);
+        } else {
+            // Show vote section, hide review section
+            voteSection.style.display = 'block';
+            reviewSection.style.display = 'none';
+
+            // Update position title in vote section
+            const positionTitle = voteSection.querySelector('.cho-title h3');
+            positionTitle.textContent = positions[currentStep - 1];
+
+            updateProgressIndicators(voteSection, currentStep);
+        }
+    }
+
+    function updateProgressIndicators(section, step) {
+        const allProgs = section.querySelectorAll('.prog, .prog-current-prog');
+
+        allProgs.forEach((prog, index) => {
+            // Remove active class from all
+            prog.classList.remove('prog-current-prog');
+            prog.classList.add('prog');
+
+            // Set active on current step
+            if (index === step - 1) {
+                prog.classList.remove('prog');
+                prog.classList.add('prog-current-prog');
+            }
+        });
+    }
+
+    // --- NEXT buttons ---
+    document.querySelectorAll('#next').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateView();
+            }
+        });
+    });
+
+    // --- PREV buttons ---
+    document.querySelectorAll('#previous').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateView();
+            }
+        });
+    });
+
+    // --- Vote Buttons ---
+    voteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.c-card');
+            card.classList.toggle('voted');
+            this.textContent = card.classList.contains('voted') ? 'Unvote' : 'Vote';
+        });
+    });
+
+    // --- View Profile Modal ---
+    viewProfile.forEach(button => {
+        button.addEventListener('click', () => {
+            viewModal.style.display = 'flex';
+        });
+    });
+
+    closeButton.addEventListener('click', function() {
+        viewModal.style.display = 'none';
+    });
+
+    // --- Initialize on load ---
+    reviewSection.style.display = 'none';
+    updateView();
+
+	function confirmVote() {
+    const confirmed = confirm("Are you sure you want to submit your final vote? This cannot be undone.");
+    if (confirmed) {
+        window.location.href = 'browse.php';
+    }
+}
+</script>
 </html>

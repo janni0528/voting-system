@@ -39,7 +39,7 @@ $firstname = htmlspecialchars($_SESSION['firstname']);
                     <h1>Welcome, <?= $firstname ?>!</h1>
                     <p>Participate in shaping the university's tomorrow. Vote securely for your preferred candidate.</p>
                 </div>
-                <button>Cast Your Vote</button>
+                <a href="voting.html"><button>Cast Your Vote</button></a>
                 <button id="export-btn">Export Ballot</button>
             </div>
         </div>
